@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-cyber-dark text-cyber-green font-mono;
+    background-image: 
+      radial-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .terminal-window {
+    @apply bg-terminal-gradient border border-terminal-border rounded-lg shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  }
+  
+  .terminal-header {
+    @apply flex items-center space-x-2 px-4 py-3 border-b border-terminal-border;
+  }
+  
+  .terminal-button {
+    @apply w-3 h-3 rounded-full;
+  }
+  
+  .terminal-red {
+    @apply bg-red-500;
+  }
+  
+  .terminal-yellow {
+    @apply bg-yellow-500;
+  }
+  
+  .terminal-green {
+    @apply bg-green-500;
+  }
+  
+  .terminal-content {
+    @apply p-4 font-mono text-sm;
+  }
+  
+  .cyber-button {
+    @apply bg-transparent border border-cyber-green text-cyber-green px-6 py-3 rounded-none font-mono font-bold uppercase tracking-wider transition-all duration-300 hover:bg-cyber-green hover:text-cyber-dark hover:shadow-lg;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+  }
+  
+  .cyber-button:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+  }
+  
+  .cyber-text {
+    @apply text-cyber-green font-mono;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  }
+  
+  .cyber-title {
+    @apply text-4xl md:text-6xl font-cyber font-black uppercase tracking-widest;
+    background: linear-gradient(45deg, #00ff41, #00cc33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  }
+  
+  .matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .nav-link {
+    @apply text-cyber-green font-mono font-bold uppercase tracking-wider transition-all duration-300 hover:text-white;
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ff41, #00cc33);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .stats-card {
+    @apply bg-terminal-gradient border border-terminal-border rounded-lg p-6 text-center;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  }
+  
+  .service-card {
+    @apply terminal-window transition-all duration-300 hover:scale-105;
+  }
+  
+  .service-card:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  }
+  
+  .portfolio-card {
+    @apply terminal-window overflow-hidden transition-all duration-300 hover:scale-105;
+  }
+  
+  .portfolio-card:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+  }
+  
+  .filter-button {
+    @apply bg-transparent border border-cyber-green text-cyber-green px-4 py-2 rounded-none font-mono text-sm uppercase tracking-wider transition-all duration-300;
+  }
+  
+  .filter-button.active {
+    @apply bg-cyber-green text-cyber-dark;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+  }
+  
+  .filter-button:hover {
+    @apply bg-cyber-green text-cyber-dark;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  }
+  
+  .animate-pulse-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}
+
+/* Custom animations */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+.matrix-rain {
+  animation: matrix-rain 10s linear infinite;
+}
