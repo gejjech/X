@@ -81,10 +81,10 @@ const Hero = () => {
                 </div>
                 <div className="terminal-content">
                   <p className="text-cyber-green mb-2">INITIALIZING Θ</p>
-                  <p className="text-cyber-green/80">> Leading Digital Marketing Agency in Dubai, UAE</p>
-                  <p className="text-cyber-green/80">> Custom Web & App Development Solutions</p>
-                  <p className="text-cyber-green/80">> AI Agents Integration & Lead Generation</p>
-                  <p className="text-cyber-green/80">> UAE market domination protocols active</p>
+                  <p className="text-cyber-green/80">&gt; Leading Digital Marketing Agency in Dubai, UAE</p>
+                  <p className="text-cyber-green/80">&gt; Custom Web & App Development Solutions</p>
+                  <p className="text-cyber-green/80">&gt; AI Agents Integration & Lead Generation</p>
+                  <p className="text-cyber-green/80">&gt; UAE market domination protocols active</p>
                 </div>
               </div>
             </div>
